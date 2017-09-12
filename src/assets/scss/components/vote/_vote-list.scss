@@ -1,0 +1,24 @@
+
+.vote-list{
+    padding: 0;
+    list-style: none;
+    margin-top: 20px;
+    margin: 0;
+
+    div[style]{
+        padding-bottom: 60%;
+        background-size: cover;
+        background-position: center;
+        opacity: .65;
+        margin-bottom: 8px;
+    }
+
+    .info{
+        overflow: hidden;
+        margin-bottom: 10px;
+
+        h2{
+            margin-top: .9em;
+        }
+    }
+}

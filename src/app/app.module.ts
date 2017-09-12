@@ -8,13 +8,14 @@ import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/dat
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DiscordService } from './services/discord.service';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB9mgqm5TLz1aA7E8-dxUw9VGjCiaIXkQU',
   authDomain: 'gamenight-db5de.firebaseapp.com',
   databaseURL: 'https://gamenight-db5de.firebaseio.com',
   projectId: 'gamenight-db5de',
-  storageBucket: '',
+  storageBucket: 'gamenight-db5de.appspot.com',
   messagingSenderId: '702799739538'
 };
 
@@ -30,7 +31,7 @@ const firebaseConfig = {
     AngularFireAuthModule,
     AngularFireDatabaseModule,
   ],
-  providers: [],
+  providers: [DiscordService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

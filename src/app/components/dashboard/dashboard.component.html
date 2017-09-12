@@ -1,3 +1,94 @@
-<p>
-  dashboard works!
-</p>
+<section class="sidebar">
+  <h4>Next week</h4>
+  <p class="type-xs">
+      Bring out your vote!
+  </p>
+  <pre>
+    {{edition | json}}
+  </pre>
+  <ul class="vote-list">
+      <li>
+          <div style="background-image:url(assets/img/battlefield.jpg)"></div>
+          <div class="info">
+              <div class="vote">
+                  <span class="fa fa-angle-up"></span>
+                  <span class="number">12</span>
+                  <span class="fa fa-angle-down"></span>
+              </div>
+              <h2>Battlefield 1</h2>
+          </div>
+      </li>
+      <li>
+          <div style="background-image:url(assets/img/nidhogg.png)"></div>
+          <div class="info">
+              <div class="vote">
+                  <span class="fa fa-angle-up"></span>
+                  <span class="number">8</span>
+                  <span class="fa fa-angle-down"></span>
+              </div>
+              <h2>Nidhogg 2</h2>
+          </div>
+      </li>
+      <li>
+          <div style="background-image:url(assets/img/gary.jpg)"></div>
+          <div class="info">
+              <div class="vote">
+                  <span class="fa fa-angle-up"></span>
+                  <span class="number">3</span>
+                  <span class="fa fa-angle-down"></span>
+              </div>
+              <h2>Garys mod</h2>
+          </div>
+      </li>
+  </ul>
+</section>
+<section class="main" *ngIf="edition?.game">
+  <div class="main-inner">
+      <h3>We're playing</h3>
+      <h1>{{edition.game.title}}</h1>
+      <p>{{edition.game.description}}</p>
+      <a href="https://discord.gg/0rWl1SiM2FXBgygn" class="btn btn-primary" target="_blank">
+          <img class="icon" src="/assets/img/discord-logo.svg" alt="">
+          Join discord
+      </a>
+
+      <br> <br> <br>
+
+      <div class="online-players">
+          <h5>Online</h5>
+          <ul>
+              <li><img src="https://randomuser.me/api/portraits/men/43.jpg" alt="John Doe"></li>
+              <li><img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Doe John"></li>
+          </ul>
+      </div>
+  </div>
+
+  <!-- <div class="backgrounds">
+      <img class="background" src="assets/dist/img/firewatch.jpg" alt="">
+      <img class="background-clipped" src="assets/dist/img/firewatch.jpg" alt="">
+  </div> -->
+
+  <div class="backgrounds">
+      <svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 1152 648" style="enable-background:new 0 0 1152 648;" xml:space="preserve">
+          <g>
+          <clipPath id="hexagonal-mask">
+                  <path class="st0" d="M1057.3,198.2c0,0-68.6-104.5-196.5-133.2c-127.9-28.8-143.2,99.2-143.2,99.2c-1,8.3-6.6,20-12.3,26l-15,15.6
+                  v115.4l19.6-20.2c0,0,9.4,1,16.3,6.9c6.8,5.9,10.1,17.4,10.1,17.4l-24.6,25.4l24.5,23.7c0,0-1.1,9.4-9.2,17.6
+                  c-8.2,8.2-16.2,7.8-16.2,7.8l-20.5-19.8v170.2c9.9,7.5,16.2,11.4,16.2,11.4c24.8,17.3,50.2,19.7,69.1-3.6
+                  c18.9-23.2,7.9-123.9,7.9-123.9c-0.9-8.3,3.1-20,8.9-26l114.5-118.6c5.8-6,17.3-10.4,25.7-9.8c0,0,101,7.5,123.6-12.3
+                  C1078.7,247.6,1075.4,222.3,1057.3,198.2z M781.8,182.8c-11.1-10.8-11.5-28.4-0.7-39.6c10.7-11.1,28.4-11.5,39.6-0.7
+                  c11.1,10.7,11.4,28.5,0.7,39.6C810.6,193.2,792.9,193.5,781.8,182.8z M876.7,235.6c-10.8,11.1-28.4,11.4-39.6,0.7
+                  c-11.1-10.8-11.5-28.4-0.7-39.6c10.7-11.1,28.4-11.5,39.6-0.7C887.2,206.8,887.4,224.5,876.7,235.6z M899.5,160.7
+                  c-10.8,11.1-28.4,11.4-39.6,0.7c-11.1-10.8-11.5-28.4-0.7-39.6c10.7-11.1,28.4-11.5,39.6-0.7C909.9,131.9,910.2,149.6,899.5,160.7z"
+                  />
+          </clipPath>
+          </g>
+          <image clip-path="url(#hexagonal-mask)" height="100%" width="100%" [attr.xlink:href]="edition.game.background_url" />
+      </svg>
+      <div class="after">
+          <img [src]="edition.game.background_url" alt="">
+      </div>
+  </div>
+
+</section>

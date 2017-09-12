@@ -1,0 +1,42 @@
+
+$font-headings: 'Roboto', sans-serif;
+$font-body: $font-headings;
+
+
+$sidebar-width: 20%;
+$main-width: 100% - $sidebar-width;
+
+
+$colors: (
+    primary: (
+        300: #705FC6,
+        500: #393f9d
+    ),
+    gray: (
+        600: #111111
+    )
+);
+
+$social: (
+    facebook: (
+        base: #5172ab
+    ),
+    twitter: (
+        base: #00b7ee
+    ),
+    google: (
+        base: #e1453b
+    ),
+    linkedin: (
+        base: #0077b5
+    ),
+    mail: (
+        base: #4b606c
+    ),
+    youtube: (
+        base: #b31217
+    ),
+    whatsapp: (
+        base: #25d366
+    )
+);

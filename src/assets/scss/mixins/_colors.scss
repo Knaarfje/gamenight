@@ -1,0 +1,15 @@
+/**
+ * Simple color mixin to declare background and color values
+ *
+ * @require {function} color
+ * @require {map} $colors
+ *
+ * @param {string} $bg-key [gray] - select color key from $colors map
+ * @param {string} $bg-variant [500] - select color variant from $colors map
+ * @param {string} $color-key [white] - select color key from $colors map
+ * @param {string} $color-variant [500] - select color variant from $colors map
+ */
+@mixin colors($bg-key: gray, $bg-variant: 500, $color-key: white, $color-variant: 500, $bg-alpha: 1) {
+    background-color: color($bg-key, $bg-variant, $bg-alpha);
+    color: color($color-key, $color-variant);
+}

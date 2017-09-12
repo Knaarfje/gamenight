@@ -1,0 +1,9 @@
+
+.sidebar{
+    @include abs(0,auto,0,0);
+    overflow: hidden;
+    width: $sidebar-width;
+    background-color: color(gray, 600);
+    padding: 50px 30px;
+    color: white;
+}

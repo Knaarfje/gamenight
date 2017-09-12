@@ -1,0 +1,45 @@
+/**
+ * Function to create a rgba color off a sass map
+ *
+ * @see ../settings/_colors.scss
+ *
+ * @param {string} $flavour [dark]
+ * @param {string} $tint [secondary]
+ * @param {string} $base-key [base]
+ *
+ * @example .test { color: font-color(dark, primary); }
+ */
+@function color-mixer($flavour, $tint, $base-key: base) {
+    /**
+     * Declare color variable
+     */
+    $color: '';
+
+    /**
+     * Check if given $flavour is in the map
+     */
+    @if map-has-key($font-colors, $flavour) {
+        $base-color: map-get(map-get($font-colors, $flavour), $base-key);
+        $tint: map-get(map-get($font-colors, $flavour), $tint);
+        /**
+         * Set the color and alpha
+         */
+        $color: rgba($base-color, $tint);
+        @if not $flavour or $flavour == '' {
+            @error 'Font-color tint: `#{$tint}` not found';
+        }
+    } @else {
+        /**
+         * Terminal error if the given $flavour is not available
+         */
+        @if type-of($flavour) != color {
+            @error 'Font-color flavour: `#{$flavour}` not found.';
+        }
+    }
+
+    /**
+     * Return the new color
+     */
+    @return $color;
+}
+

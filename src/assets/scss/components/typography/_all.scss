@@ -1,0 +1,21 @@
+
+@import 'headings';
+@import 'type';
+
+p{
+    font-weight: 300;
+    letter-spacing: .03em;
+    line-height: 1.65;
+    margin-top: .5em;
+    margin-bottom: 1.5em;
+}
+
+.icon {
+    height: 0.9em;
+    width: auto;
+    display: inline-block;
+    margin-left: -0.2em;
+    margin-top: 0.1em;
+    margin-bottom: -0.1em;
+    margin-right: 0.4em;
+}

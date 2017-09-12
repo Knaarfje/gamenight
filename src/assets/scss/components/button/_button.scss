@@ -1,0 +1,34 @@
+
+%button-reset {
+    overflow: visible;
+    padding: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    text-align: left;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none; /* for button */
+    text-decoration: none;
+}
+
+.btn{
+    @extend %button-reset;
+    background: #333;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1em;
+    padding: .6rem 1.2rem;
+    display: inline-block;
+    border-radius: 5em;
+    font-weight: 500;
+    letter-spacing: .05em;
+
+    &-primary{
+        background: color(primary, 500);
+    }
+}   

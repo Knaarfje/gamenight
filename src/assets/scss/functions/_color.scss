@@ -1,0 +1,51 @@
+/**
+ * Function to pick an color off a sass map
+ *
+ * @see ../settings/_colors.scss
+ *
+ * @param {string} $color [grey]
+ * @param {string} $variant [800]
+ * @param {string} $alpha [.68]
+ *
+ * @example .test { background-color: color(grey); } - get the base color of the grey object
+ * @example .test { background-color: color(grey, 700); } - get the color variant of the grey object
+ * @example .test { background-color: color(grey, 700, .2); } - get the color variant of the grey object in
+ *                                                              a rgba with alpha
+ * @example .test { background-color: color(grey, $alpha: .68); } - get the color variant of the grey object in
+ *                                                                  a rgba with the base color and a alpha
+ */
+
+@function color($color, $variant: $color-key, $alpha: 1) {
+    /**
+     * Check if given $color is in the map
+     */
+    @if map-has-key($colors, $color) {
+        /**
+         * Get the color, or color variant (light,dark etc.)
+         */
+        $variant-color: map-get(map-get($colors, $color), $variant);
+        @if not $variant-color or $variant-color == '' {
+            @error 'Color variant: `#{$variant}` not found for color `#{$color}`';
+        } @else {
+            $color: $variant-color;
+        }
+        /**
+         * Get the opacity variant (light,dark etc.)
+         */
+        @if $alpha != 1 {
+            $color: rgba($color, $alpha);
+        }
+    } @else {
+        /**
+         * Log error to terminal if color not found
+         */
+        @if type-of($color) != color {
+            @error 'Color name: `#{$color}` not found.';
+        }
+    }
+
+    /**
+     * Return the new color
+     */
+    @return $color;
+}

@@ -1,0 +1,23 @@
+
+.online-players{
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    li {
+        width: 10%;
+        border-radius: 70%;
+        overflow: hidden;
+        display: block;
+        float: left;
+        margin-right: -1.5%;
+    }
+    
+    ul {
+        padding: 0;
+        list-style: none;
+        margin: 0;
+    }
+}
